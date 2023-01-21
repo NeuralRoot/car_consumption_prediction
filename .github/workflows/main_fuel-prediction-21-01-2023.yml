@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'fuel-prediction-21-01-2023'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D165D89C30E24A659941BE894DB188CB }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F8DD6880B0344694AB73A7CFE4E55862 }}
