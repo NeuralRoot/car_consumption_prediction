@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4b03a559-06e2-4b84-a4b8-606a059ee71c/AppServices/subscriptions/4b03a559-06e2-4b84-a4b8-606a059ee71c/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/fuel-prediction-21-01-2023",
+    "appService.deploySubpath": "."
+}
