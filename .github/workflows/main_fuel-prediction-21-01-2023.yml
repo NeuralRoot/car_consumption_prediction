@@ -54,8 +54,9 @@ jobs:
           name: python-app
           path: .
           
-      - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v2
+      - name: Azure Login
+        uses: Azure/login@v1
+
         id: deploy-to-webapp
         with:
           app-name: 'fuel-prediction-21-01-2023'
