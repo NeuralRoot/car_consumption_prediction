@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="{{ url_for('main') }}" method="POST">
+      <label for="acceleration">Acceleration (m/s^2):</label><br />
+      <input type="number" id="acceleration" name="acceleration" required /><br />
+      <label for="weight">Weight (kg):</label><br />
+      <input type="number" id="weight" name="weight" required /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <br />
+    {% if result %}
+    <p>
+      The calculated fuel consumption is
+      <span style="color: rgb(246, 0, 0)">{{result}}</span>
+      
+    </p>
+    {% endif %}
+  </body>
+</html>
