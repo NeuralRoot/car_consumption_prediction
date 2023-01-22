@@ -40,8 +40,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Azure Login
-        uses: Azure/login@v1
 
       - name: Set up Python version
         uses: actions/setup-python@v3.0.0
@@ -84,6 +82,27 @@ jobs:
         with:
           name: python-app
           path: .
+          
+          
+      - name: Azure Login
+        uses: Azure/login@v1.4.6
+        with:
+          # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+          creds: ${{ secrets.AZURE_CREDENTIALS }} # optional
+          # ClientId of the Azure Service principal created.
+          client-id: # optional
+          # TenantId of the Azure Service principal created.
+          tenant-id: # optional
+          # Azure subscriptionId
+          subscription-id: # optional
+          # Set this value to true to enable Azure PowerShell Login in addition to Az CLI login
+          enable-AzPSSession: # optional
+          # Name of the environment. Supported values are azurecloud, azurestack, azureusgovernment, azurechinacloud, azuregermancloud. Default being azurecloud
+          environment: # optional, default is azurecloud
+          # Set this value to true to enable support for accessing tenants without subscriptions
+          allow-no-subscriptions: # optional
+          # Provide audience field for access-token. Default value is api://AzureADTokenExchange
+          audience: # optional, default is api://AzureADTokenExchange    
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -91,5 +110,8 @@ jobs:
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          
+          
+  
 
  
