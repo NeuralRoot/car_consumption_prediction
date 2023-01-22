@@ -64,7 +64,11 @@ jobs:
           path: |
             .
             !venv/
-            
+       
+      - uses: actions/checkout@v2
+      - name: Checkout private actions
+        uses: vweevers/multi-checkout-action@v1 
+      
       - name: 'Az CLI login with subscription'
         uses: ./
         with:
