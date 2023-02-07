@@ -1,10 +1,10 @@
 import flask
 import pickle
 
-with open(f'model/linear_regression_model.pkl', 'rb') as f:
+with open(f'/linear_regression_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-app = flask.Flask(__name__, template_folder='templates')
+app = flask.Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
